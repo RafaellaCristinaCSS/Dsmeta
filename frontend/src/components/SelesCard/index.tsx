@@ -5,7 +5,7 @@ import NotificationButton from "../NotificationButton";
 import './style.css';
 function SalesCars() {
     /* Estabelecendo uma data minima e uma data maxima */
-    const [minDate, setMinDate] = useState(new Date());
+    const [minDate, setMinDate] = useState(new Date(new Date().setDate(new Date().getDate() - 365))); /* Chamando uma data de 1 ano atras da data atual */
     const [maxDate, setMaxDate] = useState(new Date());
 
     return (
