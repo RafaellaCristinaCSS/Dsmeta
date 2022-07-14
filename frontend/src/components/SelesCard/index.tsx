@@ -15,7 +15,7 @@ function SalesCars() {
                 <div className="dsmeta-form-control-container">
                     <DatePicker
                         selected={new Date(minDate)}
-                        onChange={(date: Date) => { }}
+                        onChange={(date: Date) => setMinDate(date)} /* Pedindo para que capturem a nova data e alterem no visual */
                         className="dsmeta-form-control"
                         dateFormat="dd/MM/yyyy"
                     />
@@ -23,7 +23,7 @@ function SalesCars() {
                 <div className="dsmeta-form-control-container">
                     <DatePicker
                         selected={new Date(maxDate)}
-                        onChange={(date: Date) => { }}
+                        onChange={(date: Date) => setMaxDate(date)} 
                         className="dsmeta-form-control"
                         dateFormat="dd/MM/yyyy"
                     />
