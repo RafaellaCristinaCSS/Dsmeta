@@ -1,8 +1,17 @@
 package com.devsuperior.desmeta.entities;
 
 import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="tb_sales")
 public class Sale {
+	@Id /* Uma forma de dizer que aquele dado sera unico */
+    @GeneratedValue(strategy = GenerationType.IDENTITY) /* Para que esse dado seja autoincrement */
 	private Long id; //Long é um tipo de variavel inteira, mas que permite numeros maiores
 	private String seller_name;
 	private Integer visited;
