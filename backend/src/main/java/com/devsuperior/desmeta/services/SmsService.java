@@ -32,8 +32,9 @@ public class SmsService {
 	public void sendSms(Long saleId) {
 
 		Sale sale = saleRopository.findById(saleId).get();
-		
-		String msg = "vendedor " + sale.getSeller_name();
+		String date = sale.getDate().getMonthValue() + "/" + sale.getDate().getYear();
+		/* O  String.format foi ultilizado para poder formatar o valor com 2 casas apos a virgula*/
+		String msg = "O vendedor " + sale.getSeller_name() + " foi destaque em " + date + " com um total de R$ "+ String.format("%.2f", sale.getAmount());
 		
 		Twilio.init(twilioSid, twilioKey);
 
