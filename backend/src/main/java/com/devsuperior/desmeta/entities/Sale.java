@@ -72,3 +72,4 @@ public class Sale {
 
     
 }
+/* http://localhost:8080/sales?minDate=2022-01-01&maxDate=2022-03-01 */
