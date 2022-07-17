@@ -1,13 +1,24 @@
 import DatePicker from "react-datepicker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import NotificationButton from "../NotificationButton";
 import './style.css';
+import axios from "axios";
 function SalesCars() {
+    
     /* Estabelecendo uma data minima e uma data maxima */
-    const [minDate, setMinDate] = useState(new Date(new Date().setDate(new Date().getDate() - 365))); /* Chamando uma data de 1 ano atras da data atual */
-    const [maxDate, setMaxDate] = useState(new Date());
+    const min = new Date(new Date().setDate(new Date().getDate() - 365)); /* Chamando uma data de 1 ano atras da data atual */
+    const max = new Date();
+     
+    const [minDate, setMinDate] = useState(min); 
+    const [maxDate, setMaxDate] = useState(max);
 
+    useEffect(()=>{
+        axios.get("http://localhost:8080/sales")
+            .then(response=> {
+                console.log(response.data);
+            });
+    },[]);
     return (
         <div className="dsmeta-card">
             <h2 className="demeta-saler-title">Vendas</h2>
