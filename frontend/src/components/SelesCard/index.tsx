@@ -67,7 +67,7 @@ function SalesCars() {
                                             <td>{sale.seller_name}</td>
                                             <td className="show992">{sale.visited}</td>
                                             <td className="show992">{sale.deals}</td>
-                                            <td>R$ {sale.amount}</td>
+                                            <td>R$ {sale.amount.toFixed(2)}</td>
                                             <td>
                                                 <div className="dsmeta-red-btn-container">
                                                     <NotificationButton />
