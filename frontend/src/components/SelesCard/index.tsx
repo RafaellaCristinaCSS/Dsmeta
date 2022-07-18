@@ -74,7 +74,7 @@ function SalesCars() {
                                             <td>R$ {sale.amount.toFixed(2)}</td> {/* A funcao toFixed(2), serve para adicionar as duas casas decimais */}
                                             <td>
                                                 <div className="dsmeta-red-btn-container">
-                                                    <NotificationButton />
+                                                    <NotificationButton saleId={sale.id} />
                                                 </div>
                                             </td>
                                         </tr>
