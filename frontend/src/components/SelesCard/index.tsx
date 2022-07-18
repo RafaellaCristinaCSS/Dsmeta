@@ -63,11 +63,11 @@ function SalesCars() {
                                     return (
                                         <tr key={sale.id}>
                                             <td className="show992">{sale.id}</td>
-                                            <td className="show576">{sale.date}</td>
+                                            <td className="show576">{new Date(sale.date).toLocaleDateString()}</td> {/* a funcao toLocaleDateString() serve ´para que a data seja escrita no padrao brasileiro, dia, mes e ano*/}
                                             <td>{sale.seller_name}</td>
                                             <td className="show992">{sale.visited}</td>
                                             <td className="show992">{sale.deals}</td>
-                                            <td>R$ {sale.amount.toFixed(2)}</td>
+                                            <td>R$ {sale.amount.toFixed(2)}</td> {/* A funcao toFixed(2), serve para adicionar as duas casas decimais */}
                                             <td>
                                                 <div className="dsmeta-red-btn-container">
                                                     <NotificationButton />
