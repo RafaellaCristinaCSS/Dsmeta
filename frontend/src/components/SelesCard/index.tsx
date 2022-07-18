@@ -63,11 +63,11 @@ function SalesCars() {
                                     return (
                                         <tr key={sale.id}>
                                             <td className="show992">{sale.id}</td>
-                                            <td className="show576">12/07/2022</td>
+                                            <td className="show576">{sale.date}</td>
                                             <td>{sale.seller_name}</td>
-                                            <td className="show992">15</td>
-                                            <td className="show992">11</td>
-                                            <td>R$ 55300,00</td>
+                                            <td className="show992">{sale.visited}</td>
+                                            <td className="show992">{sale.deals}</td>
+                                            <td>R$ {sale.amount}</td>
                                             <td>
                                                 <div className="dsmeta-red-btn-container">
                                                     <NotificationButton />
