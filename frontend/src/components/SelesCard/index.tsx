@@ -18,13 +18,14 @@ function SalesCars() {
     const [sales, setSales] = useState<Sale[]>([]);
     useEffect(() => {
         const dmin = minDate.toISOString().slice(0, 10); /* a funcao toISOString(), serve para limpar as informacoes capturada(como local e tal) e deixar apenas data e hora */
-                                                         /*  A funcao slice(0, 10), serve para recortar a string, neste caso seria do caractere 0 ate o caractere 10 */
-        console.log(dmin);
-        axios.get(`${BASE_URL}/sales`)
+        /*  A funcao slice(0, 10), serve para recortar a string, neste caso seria do caractere 0 ate o caractere 10 */
+        const dmax = maxDate.toISOString().slice(0, 10);
+        console.log(dmin + ' - ' + dmax) ;
+        axios.get(`${BASE_URL}/sales?minDate=${dmin}&maxDate=${dmax}`)
             .then(response => {
                 setSales(response.data.content);
             });
-    }, []);
+    }, [minDate, maxDate]); /* passando esses valores, nos pedimos que a funcao seja refeita sempre que um dos dois valores forem alterados */
     return (
         <div className="dsmeta-card">
             <h2 className="demeta-saler-title">Vendas</h2>
